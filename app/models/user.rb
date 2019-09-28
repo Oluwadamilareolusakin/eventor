@@ -20,6 +20,11 @@ class User < ApplicationRecord
     update_attribute(:session_digest, User.digest(session_token))
   end
 
+  def authenticates?(attribute, token)
+    digest = send("#{attribute}_digest")
+    digest == User.digest(token)
+  end
+
   def User.generate_token
     SecureRandom.urlsafe_base64
   end

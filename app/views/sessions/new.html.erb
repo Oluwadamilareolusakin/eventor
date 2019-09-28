@@ -1,0 +1,13 @@
+<%= provide(:form_title, 'Login') %>
+<%= provide(:button_text, 'Login') %>
+<div class="form">
+  <%= form_for(:session, login_path) do |f| %>
+    <h1><%= yield(:form_title) %></h1>
+    <div class="fields">
+      <%= f.email_field :email, placeholder: 'Email Address' %>
+    </div>
+    <div class="actions">
+      <%= f.submit yield(:button_text)%>
+    </div>
+  <% end %>
+</div>
