@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
+  attr_accessor :session_digest_updated_at
   before_save :downcase_email
 
   def downcase_email
