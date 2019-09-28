@@ -3,10 +3,10 @@ class SessionsController < ApplicationController
   end
 
   def edit
-    @user = User.find_by(email: params[:email])
-    if @user & @user.is_valid_session_token? && @user.authenticates?(:session, params[:id])
-      login(@user)
-      redirect_to @user
+    user = User.find_by(email: params[:email])
+    if user & user.is_valid_session_token? && @user.authenticates?(:session, params[:id])
+      login(user)
+      redirect_to user
     else
       flash[:failure] = "Invalid login attempt"
       render :new
