@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(email: params[:session][:email].downcase)
     if @user
       @user.attempt_to_login
-      @user.send_login_mail
+      @user.send_login_email
       render 'confirmation'
     else
       flash[:failure] = "Please check your email and try again"
