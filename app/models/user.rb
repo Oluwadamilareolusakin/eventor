@@ -17,7 +17,6 @@ class User < ApplicationRecord
 
   def attempt_to_login
     self.session_token = User.generate_token
-    time = Time.zone.now
     update_attribute(:session_created_at, Time.zone.now)
     update_attribute(:session_digest, User.digest(session_token))
   end
