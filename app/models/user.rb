@@ -1,7 +1,6 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
-  attr_accessor :session_created_at
   before_save :downcase_email
 
   def downcase_email
@@ -29,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def is_valid_session_token?
-    self.session_created_at < 2.hours.ago
+    send(session_created_at) < 2.hours.ago
   end
 
   def User.generate_token
