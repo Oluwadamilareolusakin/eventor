@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: %i[create edit update destroy]
+  resources :users, only: %i[create edit update destroy show]
   resources :sessions, only: %i[edit]
   root 'static_pages#landing_page'
   get '/login', to: 'sessions#new'
