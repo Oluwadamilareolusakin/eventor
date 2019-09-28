@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def attempt_to_login
     self.session_token = User.generate_token
-    self.session_digest_updated_at = Time.zone.now
+    self.session_digest_updated_at = Time.now
     update_attribute(:session_digest, User.digest(session_token))
   end
 
@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def is_valid_session_token?
-    self.session_digest_updated_at < 2.hours.ago
+    session_digest_updated_at < 2.hours.ago
   end
 
   def User.generate_token
