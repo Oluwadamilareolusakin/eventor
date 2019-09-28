@@ -11,7 +11,6 @@ class SessionsController < ApplicationController
       flash[:failure] = "Invalid login attempt"
       render :new
     end
-
   end
   
   def create
