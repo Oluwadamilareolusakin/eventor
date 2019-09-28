@@ -26,7 +26,7 @@ class User < ApplicationRecord
   end
 
   def is_valid_session_token?
-    session_digest.updated_at < 2.hours.ago
+    self.session_digest.updated_at < 2.hours.ago
   end
 
   def User.generate_token
