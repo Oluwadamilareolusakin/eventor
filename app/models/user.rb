@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
-  attr_accessor :session_digest_updated_at
+  attr_accessor :session_created_at
   before_save :downcase_email
 
   def downcase_email
@@ -18,7 +18,7 @@ class User < ApplicationRecord
 
   def attempt_to_login
     self.session_token = User.generate_token
-    self.session_digest_updated_at = Time.now
+    self.session_created_at = Time.now
     update_attribute(:session_digest, User.digest(session_token))
   end
 
@@ -28,7 +28,7 @@ class User < ApplicationRecord
   end
 
   def is_valid_session_token?
-    session_digest_updated_at < 2.hours.ago
+    self.session_created_at < 2.hours.ago
   end
 
   def User.generate_token
