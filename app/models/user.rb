@@ -27,7 +27,7 @@ class User < ApplicationRecord
     digest == User.digest(token)
   end
 
-  def is_valid_session_token?
+  def is_valid_session?
     session_created_at < 2.hours.ago
   end
 
