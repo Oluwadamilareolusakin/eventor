@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
 
   def edit
     user = User.find_by(email: params[:email])
-    if user & user.is_valid_session_token? && @user.authenticates?(:session, params[:id])
+    if user && user.is_valid_session_token? && user.authenticates?(:session, params[:id])
       login(user)
       redirect_to user
     else
