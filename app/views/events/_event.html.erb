@@ -1,3 +1,5 @@
 <h1><%= event.title %></h1>
-<p><%= event.date%></p>
-<p><%= event.time %></p>
+<p>By <%= event.planner.name %></p>
+<p><%= event.event_date%></p>
+<p><%= event.description %></p>
+<p><%= event_time(event) %></p>
