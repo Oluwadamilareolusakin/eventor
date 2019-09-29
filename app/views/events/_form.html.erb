@@ -1,0 +1,20 @@
+<div class="form">
+  <%= form_for @event do |f| %>
+    <div class="fields">
+      <%= f.text_field :title, placeholder: 'Event Title' %>
+    </div>
+    <div class="fields">
+      <%= f.date_select :event_date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
+    </div>
+    <div class="fields">
+      <%= f.time_select :event_time %>
+    </div>
+    <div class="fields">
+      <%= f.text_area :description, placeholder: 'description' %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>
