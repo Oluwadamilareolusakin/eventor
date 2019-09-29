@@ -12,6 +12,26 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def redirect_back_or_to(default)
+    redirect_to (session[:url] || default)
+    session.delete(:url)
+  end
+
+  def store_url
+    session[:url] = request.get? ? request.original_url : nil
+  end
+
+  def log_in_user
+    unless is_logged_in?
+      store_url
+      redirect_to login_path
+    end
+  end
+
+  def is_logged_in?
+    !current_user.nil?
+  end
+
   def remember(user)
     user.remember
     cookies.signed.permanent[:user_id] = user.id
