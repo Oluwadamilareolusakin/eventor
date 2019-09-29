@@ -3,7 +3,7 @@ class EventsController < ApplicationController
   before_action :log_in_user, only: %i[new create edit update destroy]
   
   def index
-    @events = Events.all
+    @events = Event.all
   end
 
   def show
