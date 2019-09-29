@@ -4,12 +4,17 @@ class SessionsController < ApplicationController
 
   def edit
     user = User.find_by(email: params[:email])
-    if user && user.is_valid_session? && user.authenticates?(:session, params[:id])
-      login(user)
-      redirect_back_or_to user
+    if user 
+      if user.is_valid_session? && user.authenticates?(:session, params[:id])
+        login(user)
+        redirect_back_or_to user
+      else
+        flash[:failure] = "Invalid login attempt"
+        render :new
+      end
     else
-      flash[:failure] = "Invalid login attempt"
-      render :new
+      flash[:failure] = "Invalid email"
+      redirect_to root_path
     end
   end
   
