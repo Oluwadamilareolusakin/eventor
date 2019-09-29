@@ -1,7 +1,7 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
-  has_many :events
+  has_many :events, dependent: :destroy
   validates :email, uniqueness: true
   before_save :downcase_email
 
