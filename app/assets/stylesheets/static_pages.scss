@@ -1,3 +1,149 @@
-// Place all the styles related to the static_pages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'sphinx/sass/component_styles';
+
+.landing-container{
+  width: 100%;
+  height: 400px;
+  background-image: asset_url('3.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  background-position: right;
+
+  @media #{$mq-large}{
+    height: 800px;
+  }
+
+
+
+  .hero-text-container{
+    padding: 0 4em;
+    
+    h1{
+      font-size: 3em;
+      width: 70%;
+      color: rgb(51, 51, 51);
+      font-family: $aux-font;
+
+      @media #{$mq-medium}{
+        font-size: 3.5em;
+        width: 70%;
+      }
+
+      @media #{$mq-large}{
+        font-size: 4em;
+        width: 50%;
+      }
+    }
+
+    p{
+      margin: .7em 0;
+      font-size: 2em;
+      font-family: $primary-font;
+      width: 70%;
+      line-height: 1.3em;
+
+      @media #{$mq-medium}{
+        margin: .8em 0 1.5em 0;
+        font-size: 1.5em;
+      }
+
+      @media #{$mq-large}{
+        margin-bottom: 2em;
+        width: 50%;
+        line-height: 1.5em;
+      }
+    }
+
+    a{
+      @extend %btn-with-bg;
+      background-color: $primary-color;
+      color: white;
+      font-family: $aux-font;
+
+      @media #{$mq-medium}{
+        font-size: 1.3em;
+      }
+    }
+  }
+}
+
+.hero-category-container{
+  margin-top: 8em;
+
+  @media #{$mq-medium}{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .hero-category{
+    width: 80%;
+    height: 300px;
+    margin: 5em auto;
+
+    @media #{$mq-medium}{
+      width: 28.33%;
+      height: 400px;
+    }
+  }
+
+  .card{
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px .2px rgba(53, 53, 53, 0.469);
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    background-position: center;
+    padding: 3em 3em;
+    font-size: 3em;
+    margin-top: .5em;
+
+    @media #{$mq-medium}{
+      margin: 0;
+      padding: 3em 1em;
+    }
+  }
+
+  .hero-category-header{
+    font-size: 2em;
+    font-family: $aux-font;
+    text-decoration: underline;
+    color: $primary-color;
+
+    @media #{$mq-medium}{
+      font-size: 1em;
+    }
+  }
+
+  .plan{
+    background-image: asset_url('plan.svg');
+  }
+
+  .invite{
+    background-image: asset_url('invite.svg');
+  }
+
+  .hangout{
+    background-image: asset_url('hangout.svg');
+  }
+}
+
+.last-landing-section{
+  padding-top: 3em;
+  text-align: center;
+  height: 400px;
+
+  h2{
+    font-size: 3em;
+    font-family: $secondary-font;
+    margin-bottom: 1em;
+  }
+
+  a{
+    @extend %btn-with-bg;
+    font-family: $aux-font;
+    color: white;
+    background-color: $primary-color;
+  }
+}

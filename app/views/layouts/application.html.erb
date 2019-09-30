@@ -15,6 +15,9 @@
         <div class="alert alert-<%="#{type}" %>"><%= message %></div>
       <% end %>
     <% end %>
+    <%= render  'layouts/nav' %>
     <%= yield %>
+    <%= javascript_pack_tag 'custom', 'data-turbolinks-track': 'reload' %>
+
   </body>
 </html>
