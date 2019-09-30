@@ -108,7 +108,6 @@
   .hero-category-header{
     font-size: 2em;
     font-family: $aux-font;
-    text-decoration: underline;
     color: $primary-color;
 
     @media #{$mq-medium}{
@@ -138,6 +137,10 @@
     font-size: 3em;
     font-family: $secondary-font;
     margin-bottom: 1em;
+
+    @media #{$mq-medium}{
+      margin-bottom: 2em;
+    }
   }
 
   a{
@@ -145,5 +148,6 @@
     font-family: $aux-font;
     color: white;
     background-color: $primary-color;
+    font-size: 1.5em;
   }
 }
