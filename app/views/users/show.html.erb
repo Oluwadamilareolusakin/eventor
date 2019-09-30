@@ -1,2 +1,23 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="upcoming_events">
+  <% @upcoming_events.each do |event| %>
+    <div class="upcoming-event event">
+      <%= render event %>
+    </div>
+  <% end %>
+</div>
+<div class="past-events">
+  <% @past_events.each do |event| %>
+    <div class="past-event">
+      <%= render event %>
+    </div>
+  <% end %>
+</div>
+<% if current_user %>
+  <div class="owned-events">
+    <% @owned_events.each do |event| %>
+      <div class="ownder_event event">
+        <%= render  event %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

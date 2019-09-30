@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :users, only: %i[create edit update destroy show] do
+  resources :users, only: %i[create edit update destroy show index] do
     member do 
       get :attendings
     end

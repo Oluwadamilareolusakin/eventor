@@ -5,14 +5,23 @@
     </h1>
     <div class="fields">
       <%= f.text_field :name, placeholder: 'Full Name' %>
+      <% if @user.errors[:name].any? %>
+        <p>Name <%= @user.errors[:name].first %> </p>
+      <% end %>
     </div>
     
     <div class="fields">
       <%= f.email_field :email, placeholder: 'Email Address' %>
+      <% if @user.errors[:email].any? %>
+        <p>Email <%= @user.errors[:email].first %> </p>
+      <% end %>
     </div>
 
     <div class="fields">
       <%= f.text_field :username, placeholder: 'Username' %>
+      <% if @user.errors[:username].any? %>
+        <p>Usename <%= @user.errors[:username].first %> </p>
+      <% end %>
     </div>
 
     <div class="actions">

@@ -2,15 +2,27 @@
   <%= form_for @event do |f| %>
     <div class="fields">
       <%= f.text_field :title, placeholder: 'Event Title' %>
+      <% if @event.errors[:title].any? %>
+        <p>Title <%= @event.errors[:title].first %> </p>
+      <% end %>
     </div>
     <div class="fields">
       <%= f.date_select :event_date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
+      <% if @event.errors[:event_date].any? %>
+        <p>Date <%= @event.errors[:event_date].first %> </p>
+      <% end %>
     </div>
     <div class="fields">
       <%= f.time_select :event_time %>
+      <% if @event.errors[:event_time].any? %>
+        <p>Time <%= @event.errors[:event_time].first %> </p>
+      <% end %>
     </div>
     <div class="fields">
       <%= f.text_area :description, placeholder: 'description' %>
+      <% if @event.errors[:description].any? %>
+        <p>Description <%= @event.errors[:description].first %> </p>
+      <% end %>
     </div>
     
     <div class="actions">
