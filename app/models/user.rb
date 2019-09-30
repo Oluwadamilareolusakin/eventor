@@ -43,7 +43,7 @@ class User < ApplicationRecord
   end
 
   def unattend(event)
-    attedings.delete(event)
+    attendings.delete(event)
   end
 
   def is_attending?(event)
