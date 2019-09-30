@@ -2,6 +2,10 @@
 <% if is_logged_in? && current_user.is_planner?(@event) %>
 <div class="attendees">
   <h1>Attendees</h1>
-  <%= attendees(@attendees) %>
+  <% if @attendees.any? %>
+    <%= attendees(@attendees) %>
+  <% else %>
+    <h1 class="empty-data-collect-text">No attendees yet!</h1>
+  <% end %>
 </div>
 <% end %>

@@ -2,7 +2,9 @@
   <h1>Upcoming Events</h1>
   <% @upcoming_events.each do |event| %>
     <div class="upcoming-event event">
-      <%= render event %>
+      <% unless @user.is_planner?(event) %>
+        <%= render event %>
+      <% end %>
     </div>
   <% end %>
 </div>
@@ -10,7 +12,9 @@
   <h1>Past Events</h1>
   <% @past_events.each do |event| %>
     <div class="past-event">
-      <%= render event %>
+      <% unless @user.is_planner?(event) %>
+        <%= render event %>
+      <% end %>
     </div>
   <% end %>
 </div>
