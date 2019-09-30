@@ -22,9 +22,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @upcoming_events = @user.events.upcoming.includes(:title, :event_date, :event_time)
-    @past_events = @user.events.past.includes(:title, :event_date, :event_time)
-    @owned_events = @user.events.owned_events(current_user).includes(:event_date, :event_time, :title)
+    @upcoming_events = @user.events.upcoming
+    @past_events = @user.events.past
+    @owned_events = @user.events.owned_events(current_user)
   end
 
   def edit

@@ -7,7 +7,7 @@ class EventsController < ApplicationController
   end
 
   def show
-    @attendees = @event.attendees.inlcudes(:name)
+    @attendees = @event.attendees
   end
 
   def new
