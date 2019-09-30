@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :attendees, only: %i[create destroy]
+  resources :attendances, only: %i[create destroy]
   resources :sessions, only: %i[edit]
   resources :events do
     member do 
