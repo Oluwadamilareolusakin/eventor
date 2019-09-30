@@ -1,0 +1,13 @@
+<nav class="row navigation">
+  <div class="nav-right row">
+     <%= fa_icon 'bars', class: 'menu-bars', id: 'menuIcon', onclick: 'openMenu(e)' %>
+      <%= fa_icon 'caret-up', class:"mobile-menu-arrow closed", id: 'menuArrow' %>
+    <div class="drop-down-menu column closed" id="dropDown">
+        <%= link_to  "Sign in", login_path, class: 'drop-down-links' %>
+        <hr>
+        <%= link_to  "Sign up", signup_path, class: 'drop-down-links'%>
+    </div>
+    <%= link_to  "Sign in", login_path, class: 'nav-btns' %>
+    <%= link_to  "Sign up", signup_path, class: 'nav-sign-up nav-btns' %>
+  </div>
+</nav>
