@@ -1,12 +1,13 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show update edit destroy]
-  before_action :log_in_user, only: %i[new create edit update destroy]
+  # before_action :log_in_user, only: %i[new create edit update destroy]
   
   def index
     @events = Event.all
   end
 
   def show
+    @attendees = @event.attendees
   end
 
   def new

@@ -18,6 +18,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @attendances = @user.attendances
   end
 
   def edit

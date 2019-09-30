@@ -2,6 +2,8 @@ class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
   has_many :events, dependent: :destroy
+  has_many :attendances, foreign_key: 'attendee_id'
+  has_many :attendings, through: :attendances, source: :event
   validates :email, uniqueness: true
   before_save :downcase_email
 
@@ -34,6 +36,18 @@ class User < ApplicationRecord
 
   def User.generate_token
     SecureRandom.urlsafe_base64
+  end
+
+  def attend(event)
+    attendings << event
+  end
+
+  def unattend(event)
+    attedings.delete(event)
+  end
+
+  def is_attending?(event)
+    attendings.inlude?(event)
   end
 
   def remember
