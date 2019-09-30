@@ -5,12 +5,12 @@
 <p><%= event_time(event) %></p>
 <% if controller.action_name == 'show'%>
   <% unless current_user.is_attending(event) %>
-    <%= form_for(current_user.attendings.build) do |f| %>
+    <%= form_for(current_user.attendance.build) do |f| %>
       <% hidden_field_tag :event_id, event.id %>
       <%= f.submit 'Attend'%>
     <% end %>
   <% else %>
-    <%= form_for(current_user.attendings.find_by(event_id: event.id)) do |f| %>
+    <%= form_for(current_user.attendance.find_by(event_id: event.id), html: {method: :delete}) do |f| %>
       <%= f.submit 'Unattend'%>
     <% end %>
   <% end %>
