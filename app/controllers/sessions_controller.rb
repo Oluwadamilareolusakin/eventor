@@ -19,13 +19,18 @@ class SessionsController < ApplicationController
   end
   
   def create
-    @user = User.find_by(email: params[:session][:email].downcase)
-    if @user
-      @user.attempt_to_login
-      @user.send_login_email
-      render 'confirmation'
+    unless params[:session][:email].empty?
+      @user = User.find_by(email: params[:session][:email].downcase)
+      if @user
+        @user.attempt_to_login
+        @user.send_login_email
+        render 'confirmation'
+      else
+        flash[:failure] = "Please check your email and try again"
+        render :new
+      end
     else
-      flash[:failure] = "Please check your email and try again"
+      flash[:failure] = "Please enter your email"
       render :new
     end
   end
