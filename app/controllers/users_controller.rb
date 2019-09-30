@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def show
     @upcoming_events = @user.events.upcoming
     @past_events = @user.events.past
-    @owned_events = @user.events.owned_events(current_user)
+    @owned_events = current_user.events if is_logged_in?
   end
 
   def edit
