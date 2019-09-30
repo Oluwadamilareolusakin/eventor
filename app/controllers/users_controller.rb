@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
+
+  def index
+    @users = User.all
+  end
   
   def new
     @user = User.new
@@ -18,7 +22,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @attendances = @user.attendances
+    @upcoming_events = @user.events.upcoming.includes(:title, :event_date, :event_time)
+    @past_events = @user.events.past.includes(:title, :event_date, :event_time)
+    @owned_events = @user.events.owned_events(current_user).includes(:event_date, :event_time, :title)
   end
 
   def edit
