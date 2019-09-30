@@ -7,7 +7,7 @@
       <%= f.date_select :event_date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
     </div>
     <div class="fields">
-      <%= f.time,_select :event_time %>
+      <%= f.time_select :event_time %>
     </div>
     <div class="fields">
       <%= f.text_area :description, placeholder: 'description' %>
