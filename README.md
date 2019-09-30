@@ -2,6 +2,7 @@
 An event planning and management app that allows you create an event, manage your invite list and get invited to events by other users.
 
 I rolled out custom a authentication and authorization system for it.
+[See a live demo](http://eventor-io.herokuapp.com)
 
 # How authentication works
 * When you sign up, you get an email that gives you permission to login.
