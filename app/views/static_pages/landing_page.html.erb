@@ -1,2 +1,30 @@
-<h1>StaticPages#landing_page</h1>
-<p>Find me in app/views/static_pages/landing_page.html.erb</p>
+<div class="landing-container full-height column">
+  <div class="hero-text-container">
+    <h1>Everything is better with friends.</h1>
+    <p>Organize parties, get togethers, and have your closest friends there.</p>
+    <%= link_to  "Sign up for free", signup_path %>
+  </div>
+</div>
+
+<div class="hero-category-container">
+  <div class="hero-category">
+    <h3 class="hero-category-header">01. Plan your event.</h3>
+    <div class="card plan">
+    </div>
+  </div>
+  <div class="hero-category">
+      <h3 class="hero-category-header">02. Send an invite.</h3>
+      <div class="card invite">
+      </div>
+  </div>
+  <div class="hero-category">
+    <h3 class="hero-category-header">03. Hangout.</h3> 
+    <div class="card hangout">
+    </div>
+  </div>
+</div>
+
+<div class="last-landing-section">
+  <h2>You've never had so much fun!</h2>
+  <%= link_to  "Sign up", signup_path %>
+</div>
