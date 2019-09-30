@@ -4,7 +4,7 @@
 <p><%= event.description %></p>
 <p><%= event_time(event) %></p>
 <% if controller.action_name == 'show'%>
-  <% unless current_user.is_attending(event) %>
+  <% unless current_user.is_attending?(event) %>
     <%= form_for(current_user.attendance.build) do |f| %>
       <% hidden_field_tag :event_id, event.id %>
       <%= f.submit 'Attend'%>
