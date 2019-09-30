@@ -47,7 +47,7 @@ class User < ApplicationRecord
   end
 
   def is_attending?(event)
-    attendings.inlude?(event)
+    attendings.include?(event)
   end
 
   def remember
