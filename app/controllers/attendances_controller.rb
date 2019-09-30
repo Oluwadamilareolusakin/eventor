@@ -6,7 +6,7 @@ class AttendancesController < ApplicationController
   end
 
   def destroy
-    event = Event.find_by(params[:id])
+    event = Event.find(params[:id])
     current_user.unattend(event)
     redirect_to event
   end
