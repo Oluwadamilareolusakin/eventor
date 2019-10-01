@@ -19,6 +19,13 @@ module SessionsHelper
     end
   end
 
+  def correct_user?
+    unless @user == current_user
+      flash[:failure] = "You don't have access to that page"
+      redirect_back_or_to root_path
+    end
+  end
+
   def redirect_back_or_to(default)
     redirect_to (session[:url] || default)
     session.delete(:url)
