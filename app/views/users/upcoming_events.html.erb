@@ -1,0 +1,17 @@
+<div class="upcoming-header header">
+
+</div>
+<div class="upcoming_events events-section">
+    <h1 class="section-header">Upcoming Events</h1>
+    <% if @upcoming_events.any? %>
+      <% @upcoming_events.each do |event| %>
+        <div class="upcoming-event event">
+          <% unless current_user.is_planner?(event) %>
+            <%= render event %>
+          <% end %>
+        </div>
+      <% end %>
+    <% else %>
+        <p class="empty-section-text">You have no upcoming events.</p>
+    <% end %>
+  </div>

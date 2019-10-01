@@ -1,0 +1,13 @@
+<div class="past-header header"></div>
+<div class="past-events events-section">
+    <h1 class="section-header">Past Events</h1>
+    <% if @past_events.any? %>
+      <% @past_events.each do |event| %>
+        <div class="past-event">
+            <%= render event %>
+        </div>
+      <% end %>
+    <% else %>
+      <p class="empty-section-text">You haven't been invited to any events that have passed</p>
+    <% end %>
+  </div>
