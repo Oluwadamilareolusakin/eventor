@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
     if user 
       if user.is_valid_session? && user.authenticates?(:session, params[:id])
         login(user)
+        remember(user)
         redirect_back_or_to user
       else
         flash[:failure] = "Invalid login attempt"

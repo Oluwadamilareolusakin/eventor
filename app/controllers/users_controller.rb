@@ -24,7 +24,6 @@ class UsersController < ApplicationController
   end
 
   def show
-    login @user
     @owned_events = current_user.events if is_logged_in?
   end
   
