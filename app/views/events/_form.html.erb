@@ -7,9 +7,9 @@
       <% end %>
     </div>
     <div class="fields">
-      <%= f.text_field :event_location, placeholder: 'Event Location' %>
-      <% if @event.errors[:event_location].any? %>
-        <p class="form-errors">Location <%= @event.errors[:event_location].first %> </p>
+      <%= f.text_field :location, placeholder: 'Event Location' %>
+      <% if @event.errors[:location].any? %>
+        <p class="form-errors">Location <%= @event.errors[:location].first %> </p>
       <% end %>
     </div>
     <%= f.label :event_date, "Date" %>
