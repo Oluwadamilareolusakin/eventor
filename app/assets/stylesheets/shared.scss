@@ -13,7 +13,7 @@
 i.menu-bars{
   font-size: 2em;
 
-  @media #{$mq-medium}{
+  @media #{$mq-xlarge}{
     display: none;
   }
 }
@@ -58,7 +58,9 @@ i.mobile-menu-arrow{
   .nav-btns{
     display: none;    
 
-    @media #{$mq-medium}{
+    @media #{$mq-xlarge}{
+      padding: .5em;
+      font-size: 1em;
       display: inline;
     }
   }
@@ -68,6 +70,10 @@ i.mobile-menu-arrow{
     padding: .5em 2em;
     border-radius: 5px;
     color: white;
+
+    @media #{$mq-medium}{
+      padding: .5em;
+    }
   }
 }
 
