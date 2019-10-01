@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
+  before_action :admin?, only: %i[index]
+
 
   def index
     @users = User.all
@@ -22,9 +24,18 @@ class UsersController < ApplicationController
   end
 
   def show
-    @upcoming_events = @user.events.upcoming
-    @past_events = @user.events.past
+    login @user
     @owned_events = current_user.events if is_logged_in?
+  end
+  
+  def upcoming
+    @upcoming_events = current_user.events.upcoming
+    render 'upcoming_events'
+  end
+  
+  def past
+    @past_events = current_user.events.past
+    render 'past_events'
   end
 
   def edit

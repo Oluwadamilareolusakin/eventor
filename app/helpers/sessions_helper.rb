@@ -12,6 +12,13 @@ module SessionsHelper
     end
   end
 
+  def admin?
+    unless current_user.admin
+      flash[:failure] = "You don't have permission to access that page"
+      redirect_back_or_to root_path
+    end
+  end
+
   def redirect_back_or_to(default)
     redirect_to (session[:url] || default)
     session.delete(:url)
