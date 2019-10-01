@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update upcoming past]
   before_action :admin?, only: %i[index]
   before_action :log_in_user, only: %i[index upcoming past edit update]
   before_action :correct_user?, only: %i[edit update upcoming past]
