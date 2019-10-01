@@ -22,5 +22,6 @@ Rails.application.routes.draw do
   post '/signup', to: 'users#create'
   get '/profile', to: 'users#show'
   delete '/logout', to: 'sessions#destroy'
-
+  get '/past_events', to: 'users#past'
+  get '/upcoming_events', to: 'users#upcoming'
 end
