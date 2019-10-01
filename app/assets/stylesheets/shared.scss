@@ -12,6 +12,10 @@
 
 i.menu-bars{
   font-size: 2em;
+
+  @media #{$mq-medium}{
+    display: none;
+  }
 }
 
 div.drop-down-menu{
@@ -53,6 +57,10 @@ i.mobile-menu-arrow{
 
   .nav-btns{
     display: none;    
+
+    @media #{$mq-medium}{
+      display: inline;
+    }
   }
 
   .nav-sign-up{
