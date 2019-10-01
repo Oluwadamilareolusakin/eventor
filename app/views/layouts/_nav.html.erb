@@ -1,4 +1,4 @@
-<% unless controller.action_name == 'new'  && controller.controller_name == 'users' || controller.action_name == 'create'|| controller.controller_name == 'sessions'%>
+<% unless controller.action_name == 'new'  && controller.controller_name == 'users' || controller.action_name == 'create'|| controller.controller_name == 'sessions' || controller.action_name == 'confirmation'%>
 <nav class="row navigation">
   <div class="nav-right row">
      <%= fa_icon 'bars', class: 'menu-bars', id: 'menuIcon' %>
@@ -16,10 +16,23 @@
         <%= link_to  "Past events", past_events_path, class: 'drop-down-links' %>
         <hr>
         <%= link_to  "Create Event", new_event_path, class: 'drop-down-links' %>
+        <hr>
+        <%= link_to  "Sign out", logout_path, class: 'drop-down-links' %>
       <% end %>
     </div>
-    <%= link_to  "Sign in", login_path, class: 'nav-btns' %>
-    <%= link_to  "Sign up", signup_path, class: 'nav-sign-up nav-btns' %>
+    <% unless current_user %>
+      <%= link_to  "Sign in", login_path, class: 'nav-btns'%>
+      <hr>
+      <%= link_to  "Sign up", signup_path, class: 'nav-sign-up nav-btns'%>
+    <% else %>
+      <%= link_to current_user.username, user_path(current_user), class: 'nav-btns'%>
+      <hr>
+      <%= link_to  "Upcoming Events", upcoming_events_path, class: 'nav-btns'%>
+      <hr>
+      <%= link_to  "Past events", past_events_path, class: 'nav-btns'%>
+      <hr>
+      <%= link_to  "Create Event", new_event_path, class: 'nav-btns'%>
+    <% end %>
   </div>
 </nav>
 <% end %>
