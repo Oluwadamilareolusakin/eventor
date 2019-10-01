@@ -13,6 +13,10 @@
 i.menu-bars{
   font-size: 2em;
 
+  @media #{$mq-medium}{
+    font-size: 1.5em;
+  }
+
   @media #{$mq-xlarge}{
     display: none;
   }
@@ -26,11 +30,23 @@ div.drop-down-menu{
   padding: 2em 3em;
   text-align: center;
   display: column;
+
+  @media #{$mq-medium}{
+    padding: 1em 1.5em;
+
+    a{
+      margin: 0;
+    }
+  }
   
 
   a.drop-down-links{
     margin: 0;
     padding: 0;
+
+      @media #{$mq-medium}{
+      font-size: .6em;
+    }
   }
 }
 div.drop-down-menu.closed, i.mobile-menu-arrow.closed{
