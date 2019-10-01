@@ -6,6 +6,12 @@
         <p class="form-errors">Title <%= @event.errors[:title].first %> </p>
       <% end %>
     </div>
+    <div class="fields">
+      <%= f.text_field :event_location, placeholder: 'Event Location' %>
+      <% if @event.errors[:event_location].any? %>
+        <p class="form-errors">Location <%= @event.errors[:event_location].first %> </p>
+      <% end %>
+    </div>
     <%= f.label :event_date, "Date" %>
     <div class="fields">
       <%= f.date_select :event_date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
