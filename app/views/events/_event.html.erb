@@ -1,9 +1,9 @@
-<h1><%= event.title %></h1>
+<h1><%= link_to event.title, event_path(event) %></h1>
 <p>By <%= event.planner.name %></p>
 <p><%= event.event_date%></p>
 <p><%= event.description %></p>
 <p><%= event_time(event) %></p>
-<% if controller.action_name == 'show' && is_logged_in?%>
+<% if controller.action_name == 'show' && is_logged_in? && !current_user.is_planner?(event)%>
   <% unless current_user.is_attending?(event) %>
     <%= form_for(current_user.attendances.build) do |f| %>
       <%= hidden_field_tag :event_id, event.id %>

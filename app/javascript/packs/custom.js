@@ -1,8 +1,4 @@
-openMenu = (e) =>{
+menuIcon.onclick = (e) =>{
   menuArrow.classList.toggle("closed");
-  dropDown.classList.toggle('closed')
-}
-
-document.onclick = (e) =>{
-  if (e.target.id !== 'dropDown') openMenu();
+  dropDown.classList.toggle('closed');
 }
