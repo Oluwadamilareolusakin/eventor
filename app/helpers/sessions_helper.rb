@@ -31,6 +31,12 @@ module SessionsHelper
     session.delete(:url)
   end
 
+  def current_user_exists?
+    if current_user
+      redirect_back_or_to root_path
+    end
+  end
+
   def store_url
     session[:url] = request.get? ? request.original_url : nil
   end

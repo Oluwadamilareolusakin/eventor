@@ -4,7 +4,8 @@ class EventsController < ApplicationController
   before_action :admin?, only: %i[index]
   
   def index
-    @events = Event.all
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   def show
