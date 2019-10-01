@@ -1,8 +1,8 @@
 <%= provide(:form_title, 'Sign up') %>
 <%= provide(:button_text, 'Sign up') %>
-<div class="form create-form column">
+<div class="form create-form column signup-form">
   <%= render  "form" %>
-</div>
-<div class="form-secondary-action-section">
-    <%= link_to  "Sign in", login_path %>
+  <div class="form-secondary-action-section">
+    Got an account? <%= link_to  "Sign in", login_path %>
   </div>
+</div>

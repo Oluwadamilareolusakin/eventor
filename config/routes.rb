@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   get '/past_events', to: 'users#past'
   get '/upcoming_events', to: 'users#upcoming'
+  get '/signup_confirmation', to: 'users#confirmation'
+  get '/sessions_confirmation', to: 'sessions#confirmation'
 end
