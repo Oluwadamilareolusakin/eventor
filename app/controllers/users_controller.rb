@@ -3,7 +3,7 @@ class UsersController < ApplicationController
   before_action :log_in_user, only: %i[index upcoming past edit update]
   before_action :admin?, only: %i[index]
   before_action :correct_user?, only: %i[edit update]
-  # before_action :current_user_exists?, only: %i[ new create ]
+  before_action :current_user_exists?, only: %i[ new create ]
 
 
   def index
