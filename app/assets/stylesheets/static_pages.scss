@@ -10,7 +10,7 @@
   background-position: right;
 
   @media #{$mq-large}{
-    height: 800px;
+    height: 400px;
   }
 
 
@@ -25,12 +25,12 @@
       font-family: $aux-font;
 
       @media #{$mq-medium}{
-        font-size: 3.5em;
+        font-size: 2em;
         width: 70%;
       }
 
       @media #{$mq-large}{
-        font-size: 4em;
+        font-size: 2em;
         width: 50%;
       }
     }
@@ -44,13 +44,13 @@
 
       @media #{$mq-medium}{
         margin: .8em 0 1.5em 0;
-        font-size: 1.5em;
+        font-size: 1em;
       }
 
       @media #{$mq-large}{
         margin-bottom: 2em;
         width: 50%;
-        line-height: 1.5em;
+        line-height: 1.3em;
       }
     }
 
@@ -61,7 +61,7 @@
       font-family: $aux-font;
 
       @media #{$mq-medium}{
-        font-size: 1.3em;
+        font-size: .7em;
       }
     }
   }
