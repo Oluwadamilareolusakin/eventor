@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show update edit destroy]
+  before_action :admin?, only: %i[index]
   before_action :log_in_user, only: %i[new create edit update destroy]
   
   def index
