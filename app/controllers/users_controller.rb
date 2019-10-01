@@ -19,10 +19,16 @@ class UsersController < ApplicationController
       flash[:success] = "Please check your email to login"
       @user.attempt_to_login
       @user.send_login_email
-      render 'confirmation'
+      redirect_to signup_confirmation_path(@user.name)
     else
       render :new
     end
+  end
+
+  def confirmation
+    redirect_to root_path and return unless params[:format]
+    @name = params[:format].split(' ')[0]
+    render template: 'users/confirmation'
   end
 
   def show
@@ -30,12 +36,12 @@ class UsersController < ApplicationController
   end
   
   def upcoming
-    @upcoming_events = current_user.events.upcoming
+    @upcoming_events = current_user.attendings.upcoming
     render 'upcoming_events'
   end
   
   def past
-    @past_events = current_user.events.past
+    @past_events = current_user.attendings.past
     render 'past_events'
   end
 

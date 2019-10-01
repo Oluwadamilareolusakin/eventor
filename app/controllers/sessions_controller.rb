@@ -25,7 +25,7 @@ class SessionsController < ApplicationController
       if @user
         @user.attempt_to_login
         @user.send_login_email
-        render 'confirmation'
+        redirect_to sessions_confirmation_path(@user.name)
       else
         flash[:failure] = "Please check your email and try again"
         render :new
@@ -34,6 +34,12 @@ class SessionsController < ApplicationController
       flash[:failure] = "Please enter your email"
       render :new
     end
+  end
+
+  def confirmation
+    redirect_to root_path and return if params[:format].nil?
+    @name = params[:format].split(" ")[0]
+    render template: 'sessions/confirmation'
   end
 
   def destroy
