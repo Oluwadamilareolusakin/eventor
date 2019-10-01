@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:400,900,900i|Muli|Press+Start+2P&display=swap");
+.header {
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain; }
+
+.profile-header {
+  background-image: asset_url("profile.svg"); }
+
+.upcoming-header {
+  background-image: asset_url("upcoming.svg"); }
+
+.past-header {
+  background-image: asset_url("past.svg"); }
+
+.events-section {
+  padding: 2em 4em; }
+  .events-section .empty-section-text {
+    font-family: "Muli", sans-serif;
+    margin-top: 2em; }
+    .events-section .empty-section-text a {
+      text-decoration: underline; }
+  .events-section .event {
+    margin-top: 2em;
+    box-shadow: 0px 0px 5px 0.2px rgba(53, 53, 53, 0.469);
+    padding: 1em;
+    width: 60%; }
+
+.section-header {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 3em; }
+
+.signup-confirmation {
+  background-image: assert_url("signup_confirmation.svg");
+  text-align: center; }
+
+.signup-form {
+  background-image: asset_url("signup.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center; }
+
+/*# sourceMappingURL=users.css.map */

@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:400,900,900i|Muli|Press+Start+2P&display=swap");
+.form-secondary-action-section a {
+  font-size: 1em;
+  padding: 0.8em 1em;
+  border-radius: 0.2em; }
+  @media (min-width: 64em) {
+    .form-secondary-action-section a {
+      font-size: 1.5em; } }
+
+.navigation {
+  height: 50px;
+  padding: 5em 2em;
+  font-family: "Muli", sans-serif; }
+  @media (min-width: 64em) {
+    .navigation {
+      padding: 4em 2em; } }
+
+i.menu-bars {
+  font-size: 2em; }
+  @media (min-width: 64em) {
+    i.menu-bars {
+      display: none; } }
+
+div.drop-down-menu {
+  background-color: white;
+  box-shadow: 0px 0px 5px 0.2px rgba(53, 53, 53, 0.469);
+  position: absolute;
+  top: 6em;
+  padding: 2em 3em;
+  text-align: center;
+  display: column; }
+  div.drop-down-menu a.drop-down-links {
+    margin: 0;
+    padding: 0; }
+
+div.drop-down-menu.closed, i.mobile-menu-arrow.closed {
+  display: none; }
+
+i.mobile-menu-arrow {
+  font-size: 3em;
+  color: #e7e7e7;
+  position: absolute;
+  top: 1.3em; }
+
+.nav-right {
+  width: 100%;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4em; }
+  .nav-right a {
+    margin-right: 2em; }
+  .nav-right .nav-btns {
+    display: none; }
+    @media (min-width: 64em) {
+      .nav-right .nav-btns {
+        display: inline; } }
+  .nav-right .nav-sign-up {
+    background-color: #00aeff;
+    padding: .5em 2em;
+    border-radius: 5px;
+    color: white; }
+
+.confirmation-holder {
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  font-family: "Muli", sans-serif; }
+  .confirmation-holder h1 {
+    font-size: 3em;
+    color: #003b8d; }
+  .confirmation-holder p {
+    font-size: 1.5em; }
+
+.create-form, .form {
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center; }
+  .create-form .fields, .form .fields {
+    width: 100%; }
+  .create-form form, .form form {
+    width: 60%; }
+    @media (min-width: 64em) {
+      .create-form form, .form form {
+        width: 40%; } }
+    .create-form form h1, .form form h1 {
+      font-family: "Share Tech Mono", monospace;
+      margin-bottom: .6em;
+      text-align: center;
+      font-size: 3em; }
+    .create-form form select, .form form select {
+      background-color: white;
+      box-shadow: 0px 0px 5px 0.2px rgba(53, 53, 53, 0.469); }
+    .create-form form input, .create-form form textarea, .form form input, .form form textarea {
+      font-family: "Montserrat", sans-serif;
+      width: 100%;
+      font-size: 2.2em;
+      padding: .2em;
+      margin-bottom: 1em;
+      border: none;
+      box-shadow: 0px 0px 5px 0.2px rgba(53, 53, 53, 0.469); }
+      @media (min-width: 64em) {
+        .create-form form input, .create-form form textarea, .form form input, .form form textarea {
+          font-size: .8em;
+          padding: .5em; } }
+    .create-form form .field-with-errors input, .form form .field-with-errors input {
+      border: 1px solid sienna; }
+    .create-form form select, .form form select {
+      width: 20%;
+      font-size: 1em;
+      padding: .3em 0;
+      border: none;
+      margin: 0 0 2em 0; }
+    .create-form form .form-errors, .form form .form-errors {
+      margin-top: -1em; }
+    .create-form form input[type="submit"], .form form input[type="submit"] {
+      transition: .25s;
+      background-color: #003b8d;
+      color: white; }
+      @media (min-width: 64em) {
+        .create-form form input[type="submit"], .form form input[type="submit"] {
+          background-color: grey; }
+          .create-form form input[type="submit"]:hover, .form form input[type="submit"]:hover {
+            background-color: #003b8d;
+            color: white; } }
+
+.form-secondary-action-section {
+  font-family: "Muli", sans-serif; }
+  @media (min-width: 64em) {
+    .form-secondary-action-section {
+      position: absolute;
+      top: 3em;
+      right: 6em;
+      font-size: .8em; } }
+  .form-secondary-action-section a {
+    background-color: #00aeff;
+    font-size: 1em;
+    color: white;
+    font-family: "Share Tech Mono", monospace; }
+    @media (min-width: 64em) {
+      .form-secondary-action-section a {
+        padding: .5em;
+        font-size: 1em; } }
+
+.alert {
+  width: 50%;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  position: absolute;
+  top: 1em;
+  z-index: 1;
+  font-family: "Muli", sans-serif;
+  right: 25%; }
+
+.alert-failure {
+  background-color: salmon;
+  padding: .3em; }
+
+.alert-success {
+  background-color: #00bebe; }
+
+/*# sourceMappingURL=shared.css.map */

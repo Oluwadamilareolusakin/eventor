@@ -1,0 +1,120 @@
+@import url("https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:400,900,900i|Muli|Press+Start+2P&display=swap");
+.landing-container .hero-text-container a, .last-landing-section a {
+  font-size: 1em;
+  padding: 0.8em 1em;
+  border-radius: 0.2em; }
+  @media (min-width: 64em) {
+    .landing-container .hero-text-container a, .last-landing-section a {
+      font-size: 1.5em; } }
+
+.landing-container {
+  width: 100%;
+  height: 400px;
+  background-image: asset_url("3.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  background-position: right; }
+  @media (min-width: 85.375em) {
+    .landing-container {
+      height: 800px; } }
+  .landing-container .hero-text-container {
+    padding: 0 4em; }
+    .landing-container .hero-text-container h1 {
+      font-size: 3em;
+      width: 70%;
+      color: #333333;
+      font-family: "Share Tech Mono", monospace; }
+      @media (min-width: 64em) {
+        .landing-container .hero-text-container h1 {
+          font-size: 3.5em;
+          width: 70%; } }
+      @media (min-width: 85.375em) {
+        .landing-container .hero-text-container h1 {
+          font-size: 4em;
+          width: 50%; } }
+    .landing-container .hero-text-container p {
+      margin: .7em 0;
+      font-size: 2em;
+      font-family: "Montserrat", sans-serif;
+      width: 70%;
+      line-height: 1.3em; }
+      @media (min-width: 64em) {
+        .landing-container .hero-text-container p {
+          margin: .8em 0 1.5em 0;
+          font-size: 1.5em; } }
+      @media (min-width: 85.375em) {
+        .landing-container .hero-text-container p {
+          margin-bottom: 2em;
+          width: 50%;
+          line-height: 1.5em; } }
+    .landing-container .hero-text-container a {
+      background-color: #003b8d;
+      color: white;
+      font-family: "Share Tech Mono", monospace; }
+      @media (min-width: 64em) {
+        .landing-container .hero-text-container a {
+          font-size: 1.3em; } }
+
+.hero-category-container {
+  margin-top: 8em; }
+  @media (min-width: 64em) {
+    .hero-category-container {
+      display: flex;
+      flex-flow: row nowrap;
+      align-items: flex-start;
+      justify-content: center; } }
+  .hero-category-container .hero-category {
+    width: 80%;
+    height: 300px;
+    margin: 5em auto; }
+    @media (min-width: 64em) {
+      .hero-category-container .hero-category {
+        width: 28.33%;
+        height: 400px; } }
+  .hero-category-container .card {
+    border-radius: 4px;
+    box-shadow: 0px 0px 5px 0.2px rgba(53, 53, 53, 0.469);
+    background-repeat: no-repeat;
+    background-size: contain;
+    box-sizing: border-box;
+    background-position: center;
+    padding: 3em 3em;
+    font-size: 3em;
+    margin-top: .5em; }
+    @media (min-width: 64em) {
+      .hero-category-container .card {
+        margin: 0;
+        padding: 3em 1em; } }
+  .hero-category-container .hero-category-header {
+    font-size: 2em;
+    font-family: "Share Tech Mono", monospace;
+    color: #003b8d; }
+    @media (min-width: 64em) {
+      .hero-category-container .hero-category-header {
+        font-size: 1em; } }
+  .hero-category-container .plan {
+    background-image: asset_url("plan.svg"); }
+  .hero-category-container .invite {
+    background-image: asset_url("invite.svg"); }
+  .hero-category-container .hangout {
+    background-image: asset_url("hangout.svg"); }
+
+.last-landing-section {
+  padding-top: 3em;
+  text-align: center;
+  height: 400px; }
+  .last-landing-section h2 {
+    font-size: 3em;
+    font-family: "Muli", sans-serif;
+    margin-bottom: 1em; }
+    @media (min-width: 64em) {
+      .last-landing-section h2 {
+        margin-bottom: 2em; } }
+  .last-landing-section a {
+    font-family: "Share Tech Mono", monospace;
+    color: white;
+    background-color: #003b8d;
+    font-size: 1.5em; }
+
+/*# sourceMappingURL=static_pages.css.map */

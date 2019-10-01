@@ -107,7 +107,7 @@ i.mobile-menu-arrow{
     width: 60%;
 
     @media #{$mq-medium}{
-      width: 50%; 
+      width: 40%; 
     }
     h1{
       font-family: $aux-font;
@@ -130,9 +130,8 @@ i.mobile-menu-arrow{
       box-shadow: 0px 0px 5px .2px rgba(53, 53, 53, 0.469); 
       
       @media #{$mq-medium}{
-        font-size: 1.4em;
-
-        
+        font-size: .8em;
+        padding: .5em;
       }
     }
 
@@ -170,12 +169,13 @@ i.mobile-menu-arrow{
 }
 
 .form-secondary-action-section{
-  
+  font-family: $secondary-font;
   
   @media #{$mq-medium}{
     position: absolute;
     top: 3em;
     right: 6em;
+    font-size: .8em;
   }
 
   a{
@@ -184,6 +184,11 @@ i.mobile-menu-arrow{
     font-size: 1em;
     color: white;
     font-family: $aux-font;
+
+    @media #{$mq-medium}{
+      padding: .5em;
+      font-size: 1em;
+    }
   }
 }
 

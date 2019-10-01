@@ -1,0 +1,11 @@
+.session-confirmation {
+  background-image: asset_url("login.svg");
+  text-align: center; }
+
+.login-form {
+  background-image: asset_url("login.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; }
+
+/*# sourceMappingURL=sessions.css.map */
