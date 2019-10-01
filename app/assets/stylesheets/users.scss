@@ -45,3 +45,15 @@
   font-family: $aux-font;
   font-size: 3em;
 }
+
+.signup-confirmation{
+  background-image: assert_url('signup_confirmation.svg');
+  text-align: center;
+}
+
+.signup-form{
+  background-image: asset_url('signup.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
