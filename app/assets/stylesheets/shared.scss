@@ -189,12 +189,12 @@ i.mobile-menu-arrow{
     
     input[type="submit"]{
       transition: .25s;   
-      background-color: $primary-color;
+      background-color: $main-accent;
       color: white;
       @media #{$mq-medium}{
         background-color: grey;
         &:hover{
-          background-color: $primary-color;
+          background-color: $main-accent;
           color: white;
         }
       } 
@@ -245,4 +245,28 @@ i.mobile-menu-arrow{
 
 .alert-success{
   background-color: rgb(0, 190, 190);
+}
+
+.footer{
+  background-color: white;
+  text-align: center;
+  padding: 8em 0 0 0;
+  color: white;
+
+  a{
+    margin-right: 2em;
+    background-color: grey;
+    padding: .4em .5em;
+    border-radius: 50%;
+  }
+
+  .second-footer-section{
+    margin-top: .3em;
+    font-family: $aux-font;
+    color: grey;
+
+    @media #{$mq-medium}{
+      font-size: .8em;
+    }
+  }
 }
