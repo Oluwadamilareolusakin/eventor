@@ -21,7 +21,7 @@
     h1{
       font-size: 3em;
       width: 70%;
-      color: rgb(51, 51, 51);
+      color: $main-accent;
       font-family: $aux-font;
 
       @media #{$mq-medium}{
@@ -56,12 +56,14 @@
 
     a{
       @extend %btn-with-bg;
-      background-color: $primary-color;
+      background-color: $aux-accent;
       color: white;
       font-family: $aux-font;
 
       @media #{$mq-medium}{
         font-size: .7em;
+        padding: 1.2em 1em;
+        font-weight: 900;
       }
     }
   }
@@ -69,6 +71,7 @@
 
 .hero-category-container{
   margin-top: 8em;
+  
 
   @media #{$mq-medium}{
     display: flex;
@@ -97,6 +100,7 @@
     background-position: center;
     padding: 3em 3em;
     font-size: 3em;
+    z-index: 2;
     margin-top: .5em;
 
     @media #{$mq-medium}{
@@ -107,8 +111,8 @@
 
   .hero-category-header{
     font-size: 2em;
-    font-family: $aux-font;
-    color: $primary-color;
+    font-family: $secondary-font;
+    color: $aux-accent;
 
     @media #{$mq-medium}{
       font-size: 1em;
@@ -132,23 +136,34 @@
   padding-top: 3em;
   text-align: center;
   height: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: asset_url('section2.svg');
 
   h2{
     font-size: 2em;
     font-family: $secondary-font;
+    color: $main-accent;
     margin-bottom: 1em;
     line-height: 1em;
 
     @media #{$mq-medium}{
-      margin-bottom: .8em;
+      margin-bottom: .3em;
     }
+
+  }
+
+  p{
+    margin-bottom: 1.3em;
+    font-family: $primary-font;
   }
 
   a{
     @extend %btn-with-bg;
     font-family: $aux-font;
     color: white;
-    background-color: $primary-color;
+    background-color: $aux-accent;
     font-size: .8em;
   }
 }
