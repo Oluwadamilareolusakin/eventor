@@ -34,7 +34,7 @@ Rails.application.configure do
   config.active_storage.service = :test
 
   config.action_mailer.perform_caching = false
-  
+
   host = 'localhost:3000'
 
   Rails.application.routes.default_url_options[:host] = 'host'

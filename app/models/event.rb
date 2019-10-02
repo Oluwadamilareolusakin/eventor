@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Event < ApplicationRecord
-  scope       :upcoming,    -> { where( "event_date > ?", Date.today )}
-  scope       :past,        -> { where( "event_date < ?", Date.today )}
+  scope       :upcoming,    -> { where('event_date > ?', Date.today) }
+  scope       :past,        -> { where('event_date < ?', Date.today) }
 
   validates :title, presence: true
   validates :description, presence: true

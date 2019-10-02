@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class ChangeDateTimeToDatetimeFieldsOnEvents < ActiveRecord::Migration[6.0]
   def change
     change_column :events, :date, 'date USING CAST(date AS date)'

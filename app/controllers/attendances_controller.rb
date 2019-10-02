@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AttendancesController < ApplicationController
   def create
     event = Event.find(params[:event_id])
@@ -10,5 +12,4 @@ class AttendancesController < ApplicationController
     current_user.unattend(event)
     redirect_back_or_to event
   end
-
 end

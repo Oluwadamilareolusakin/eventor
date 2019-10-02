@@ -1,8 +1,10 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   before_action :set_event, only: %i[show update edit destroy]
   # before_action :log_in_user, only: %i[new create edit update destroy index]
   before_action :admin?, only: %i[index]
-  
+
   def index
     @past_events = Event.past
     @upcoming_events = Event.upcoming
@@ -26,8 +28,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
     @event.update(event_params)
@@ -40,11 +41,12 @@ class EventsController < ApplicationController
   end
 
   private
-    def event_params
-      params.require(:event).permit(:title, :description, :event_date, :event_time, :location)
-    end
 
-    def set_event
-      @event = Event.find(params[:id])
-    end
+  def event_params
+    params.require(:event).permit(:title, :description, :event_date, :event_time, :location)
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
+  end
 end

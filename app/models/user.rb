@@ -1,23 +1,25 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
   has_many    :events,      dependent: :destroy
   has_many    :attendances, foreign_key: 'attendee_id'
-  has_many    :attendings,      through: :attendances, source: :event
+  has_many    :attendings, through: :attendances, source: :event
   validates   :email,        uniqueness: true, presence: true
   validates   :username,     uniqueness: true, presence: true
-  validates   :name,           presence: true
+  validates   :name, presence: true
   before_save :downcase_email
 
   def downcase_email
-    self.email.downcase
+    email.downcase
   end
 
   def send_login_email
     SessionsMailer.login_validation(self).deliver_now
   end
 
-  def User.digest(token)
+  def self.digest(token)
     Digest::SHA1.hexdigest(token)
   end
 
@@ -36,7 +38,7 @@ class User < ApplicationRecord
     session_created_at > 2.hours.ago
   end
 
-  def User.generate_token
+  def self.generate_token
     SecureRandom.urlsafe_base64
   end
 

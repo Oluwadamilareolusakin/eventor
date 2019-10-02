@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module SessionsHelper
   def login(user)
     session[:user_id] = user.id
@@ -5,7 +7,7 @@ module SessionsHelper
 
   def current_user
     if user_id = session[:user_id]
-      @current_user ||= User.find_by(id: user_id) 
+      @current_user ||= User.find_by(id: user_id)
     elsif user_id = cookies.signed[:user_id]
       user = User.find_by(id: user_id)
       login(user)
@@ -32,9 +34,7 @@ module SessionsHelper
   end
 
   def current_user_exists?
-    if current_user
-      redirect_back_or_to root_path
-    end
+    redirect_back_or_to root_path if current_user
   end
 
   def store_url
