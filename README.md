@@ -3,6 +3,8 @@ An event planning and management app that allows you create an event, manage you
 
 I rolled out custom a authentication and authorization system for it.
 
+[See a live demo](http://eventor-io.herokuapp.com)
+
 # How authentication works
 * When you sign up, you get an email that gives you permission to login.
 * On subsequent logins, you will also be sent a magic mail to login.
