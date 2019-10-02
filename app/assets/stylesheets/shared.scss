@@ -250,9 +250,12 @@ i.mobile-menu-arrow{
 .footer{
   background-color: white;
   text-align: center;
-  padding: 8em 0 0 0;
   color: white;
-
+  padding: 1em 0 1em 0;
+  
+  @media #{$mq-medium}{
+    padding: 3em 0 0 0;
+  }
   a{
     margin-right: 2em;
     background-color: grey;
@@ -261,11 +264,12 @@ i.mobile-menu-arrow{
   }
 
   .second-footer-section{
-    margin-top: .3em;
     font-family: $aux-font;
     color: grey;
-
+    margin-top: 1.2em;
+    
     @media #{$mq-medium}{
+      margin-top: .3em;
       font-size: .8em;
     }
   }

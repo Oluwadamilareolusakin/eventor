@@ -145,7 +145,7 @@
     font-size: 2em;
     font-family: $secondary-font;
     color: $main-accent;
-    margin-bottom: 1em;
+    margin-bottom: .4em;
     line-height: 1em;
 
     @media #{$mq-medium}{
@@ -164,6 +164,10 @@
     font-family: $aux-font;
     color: white;
     background-color: $aux-accent;
-    font-size: .8em;
+    font-size: 1.2em;
+
+    @media #{$mq-medium}{
+      font-size: .8em;
+    }
   }
 }
