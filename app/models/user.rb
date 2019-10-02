@@ -3,12 +3,12 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
   attr_accessor :session_token
-  has_many    :events,      dependent: :destroy
-  has_many    :attendances, foreign_key: 'attendee_id'
-  has_many    :attendings, through: :attendances, source: :event
-  validates   :email,        uniqueness: true, presence: true
-  validates   :username,     uniqueness: true, presence: true
-  validates   :name, presence: true
+  has_many :events, dependent: :destroy
+  has_many :attendances, foreign_key: 'attendee_id'
+  has_many :attendings, through: :attendances, source: :event
+  validates :email, uniqueness: true, presence: true
+  validates :username, uniqueness: true, presence: true
+  validates :name, presence: true
   before_save :downcase_email
 
   def downcase_email
