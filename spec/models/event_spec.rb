@@ -1,22 +1,31 @@
 require 'rails_helper'
 
 RSpec.describe Event, :type => :model do
-
-  it 'has a valid factory' do
-    expect(event).to be_valid
+  before :each do
+    @planner = FactoryBot.create(:user)
+    @event = FactoryBot.create(:event, planner: @planner)
   end
 
-  it 'has none to begin with' do
-    expect(Event.count).to eq(0)
+  context 'with valid event details' do
+    it 'creates a valid event' do
+      expect(@event).to be_valid
+    end
+  
+    it 'has a title' do
+      expect(@event.title).to eq('Example event')
+    end
+  
+    it 'has a description' do
+      expect(@event.description).to eq('This is a valid event description')
+    end
   end
 
-  it 'has one after creating one' do
-    user.events.build
-    expect(Event.count).to eq(1)
-  end
 
-  it 'has none after one was created in the last test' do
-    expect(Event.count).to eq(0)
+  context 'with invalid event details' do
+    it 'is not valid' do
+      @event.event_time = nil
+      expect(@event).to_not be_valid
+    end
   end
 
   it { is_expected.to validate_presence_of(:title) }
