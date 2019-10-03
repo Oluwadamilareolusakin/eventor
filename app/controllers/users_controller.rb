@@ -71,6 +71,7 @@ class UsersController < ApplicationController
 
   def correct_user?
     return if @user == current_user
+
     flash[:failure] = "You don't have access to that page"
     redirect_back_or_to root_path
   end

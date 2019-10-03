@@ -16,6 +16,7 @@ module SessionsHelper
 
   def admin?
     return if current_user.admin
+
     flash[:failure] = "You don't have permission to access that page"
     redirect_back_or_to root_path
   end
