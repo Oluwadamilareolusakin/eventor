@@ -2,7 +2,7 @@
   <h1 class="event-title"><%= link_to event.title, event_path(event) %></h1>
   <!-- <p class="event-description"><%= event.description %></p> -->
   <p class="event-time"><%= event_time(event) %></p>
-  <p class="event-date"><%= event.event_date%></p>
+  <p class="event-date"><%= event.date%></p>
   <% if controller.action_name == 'show' && logged_in? && !current_user.planner?(event)%>
     <% unless current_user.attending?(event) %>
     <%= form_for(current_user.attendances.build) do |f| %>
