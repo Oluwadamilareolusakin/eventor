@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class UsersController < ApplicationController
-  before_action :set_user, only: %i[show edit update]
+  before_action :set_user, only: %i[show edit update past upcoming]
   before_action :log_in_user, only: %i[index show upcoming past edit update]
   before_action :admin?, only: %i[index]
   before_action :correct_user?, only: %i[edit update show upcoming past]
