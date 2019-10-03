@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_000452) do
+ActiveRecord::Schema.define(version: 2019_10_03_164521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,18 @@ ActiveRecord::Schema.define(version: 2019_10_03_000452) do
     t.index ["event_date"], name: "index_events_on_event_date"
     t.index ["event_time"], name: "index_events_on_event_time"
     t.index ["user_id"], name: "index_events_on_user_id"
+  end
+
+  create_table "invitings", force: :cascade do |t|
+    t.integer "invited_id"
+    t.integer "inviter_id"
+    t.integer "event_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["event_id", "inviter_id", "invited_id"], name: "index_invitings_on_event_id_and_inviter_id_and_invited_id", unique: true
+    t.index ["event_id"], name: "index_invitings_on_event_id"
+    t.index ["invited_id"], name: "index_invitings_on_invited_id"
+    t.index ["inviter_id"], name: "index_invitings_on_inviter_id"
   end
 
   create_table "users", force: :cascade do |t|
