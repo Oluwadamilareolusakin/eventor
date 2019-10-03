@@ -34,7 +34,7 @@ class User < ApplicationRecord
     digest == User.digest(token)
   end
 
-  def is_valid_session?
+  def valid_session?
     session_created_at > 2.hours.ago
   end
 
@@ -50,11 +50,11 @@ class User < ApplicationRecord
     attendings.delete(event)
   end
 
-  def is_attending?(event)
+  def attending?(event)
     attendings.include?(event)
   end
 
-  def is_planner?(event)
+  def planner?(event)
     events.include?(event)
   end
 

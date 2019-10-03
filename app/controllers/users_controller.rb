@@ -70,9 +70,8 @@ class UsersController < ApplicationController
   end
 
   def correct_user?
-    unless @user == current_user
-      flash[:failure] = "You don't have access to that page"
-      redirect_back_or_to root_path
-    end
+    return if @user == current_user
+    flash[:failure] = "You don't have access to that page"
+    redirect_back_or_to root_path
   end
 end

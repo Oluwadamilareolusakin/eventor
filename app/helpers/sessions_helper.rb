@@ -15,10 +15,9 @@ module SessionsHelper
   end
 
   def admin?
-    unless current_user.admin
-      flash[:failure] = "You don't have permission to access that page"
-      redirect_back_or_to root_path
-    end
+    return if current_user.admin
+    flash[:failure] = "You don't have permission to access that page"
+    redirect_back_or_to root_path
   end
 
   def redirect_back_or_to(default)
@@ -35,13 +34,12 @@ module SessionsHelper
   end
 
   def log_in_user
-    unless is_logged_in?
-      store_url
-      redirect_to login_path
-    end
+    return is_logged_in?
+    store_url
+    redirect_to login_path
   end
 
-  def is_logged_in?
+  def logged_in?
     !current_user.nil?
   end
 

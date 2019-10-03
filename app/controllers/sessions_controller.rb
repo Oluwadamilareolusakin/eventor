@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
   def edit
     user = User.find_by(email: params[:email])
     if user
-      if user.is_valid_session? && user.authenticates?(:session, params[:id])
+      if user.valid_session? && user.authenticates?(:session, params[:id])
         login(user)
         remember(user)
         redirect_back_or_to user
@@ -45,7 +45,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    logout if is_logged_in?
-    redirect_to root_path unless is_logged_in?
+    logout if logged_in?
+    redirect_to root_path unless logged_in?
   end
 end
