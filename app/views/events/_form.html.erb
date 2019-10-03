@@ -12,18 +12,18 @@
         <p class="form-errors">Location <%= @event.errors[:location].first %> </p>
       <% end %>
     </div>
-    <%= f.label :event_date, "Date", class: 'form-label' %>
+    <%= f.label :date, "Date", class: 'form-label' %>
     <div class="fields">
-      <%= f.date_select :event_date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
-      <% if @event.errors[:event_date].any? %>
-        <p class="form-errors">Date <%= @event.errors[:event_date].first %> </p>
+      <%= f.date_select :date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
+      <% if @event.errors[:date].any? %>
+        <p class="form-errors">Date <%= @event.errors[:date].first %> </p>
       <% end %>
     </div>
-    <%= f.label :event_time, "Time", class: 'form-label' %>
+    <%= f.label :time, "Time", class: 'form-label' %>
     <div class="fields">
-      <%= f.time_select :event_time %>
-      <% if @event.errors[:event_time].any? %>
-        <p class="form-errors">Time <%= @event.errors[:event_time].first %> </p>
+      <%= f.time_select :time %>
+      <% if @event.errors[:time].any? %>
+        <p class="form-errors">Time <%= @event.errors[:time].first %> </p>
       <% end %>
 
       <%= f.file_field :cover_image%>

@@ -9,4 +9,5 @@ files:
     - "Guardfile"
     - "Rakefile"
     - "app/controllers/*"
-    -"spec/*"
+    - "spec/*"
+    - "app/helpers/*"
