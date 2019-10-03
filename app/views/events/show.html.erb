@@ -1,12 +1,17 @@
-<img src="<%= url_for(@event.cover_image) %>" alt="<%= @event.title %>">
-<%= render @event %>
-<% if is_logged_in? && current_user.is_planner?(@event) %>
-<div class="attendees">
-  <h1>Attendees</h1>
-  <% if @attendees.any? %>
-    <%= attendees(@attendees) %>
-  <% else %>
-    <h1 class="empty-data-collect-text">No attendees yet!</h1>
+<div class="event-cover-image" style = "background-image: url(<%= url_for(@event.cover_image)%>)">
+</div>
+<div class="events-section event-show-body">
+  <%= render @event %>
+  <% if is_logged_in? && current_user.is_planner?(@event) %>
+  <div class="attendees">
+    <h1>Attendees</h1>
+    <% if @attendees.any? %>
+      <% @attendees.each do |attendee|%>
+        <%= attendee.name %>
+      <%end%>
+    <% else %>
+      <h1 class="empty-data-collect-text">No attendees yet!</h1>
+    <% end %>
+  </div>
   <% end %>
 </div>
-<% end %>

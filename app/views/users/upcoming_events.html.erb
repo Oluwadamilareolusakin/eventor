@@ -7,7 +7,9 @@
       <% @upcoming_events.each do |event| %>
         <div class="upcoming-event event">
           <% unless current_user.is_planner?(event) %>
-            <%= render event %>
+          <div class=" event row">
+              <img src="<%= url_for(event.cover_image)%>" alt="" class="user"> <%= render  event %>
+             </div>
           <% end %>
         </div>
       <% end %>

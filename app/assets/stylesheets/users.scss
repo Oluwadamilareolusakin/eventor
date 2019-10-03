@@ -21,26 +21,6 @@
   background-image: asset_url('past.svg');
 }
 
-.events-section{
-  padding: 2em 4em;
-
-  .empty-section-text{
-    font-family: $secondary-font;
-    margin-top: 2em;
-
-    a{
-      text-decoration: underline;
-    }
-  }
-
-  .event{
-    margin-top: 2em;
-    box-shadow: 0px 0px 5px .2px rgba(53, 53, 53, 0.469);
-    padding: 1em;
-    width: 60%;
-  }
-}
-
 .section-header{
   font-family: $aux-font;
   font-size: 3em;
