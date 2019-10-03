@@ -1,3 +1,4 @@
+<img src="<%= url_for(@event.cover_image) %>" alt="<%= @event.title %>">
 <%= render @event %>
 <% if is_logged_in? && current_user.is_planner?(@event) %>
 <div class="attendees">

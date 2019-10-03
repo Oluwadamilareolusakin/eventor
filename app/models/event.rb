@@ -9,6 +9,7 @@ class Event < ApplicationRecord
   validates :event_time, presence: true
   validates :event_date, presence: true
   validates :location, presence: true
+  validates :cover_image, presence: true
 
   belongs_to :planner, class_name: 'User', foreign_key: 'user_id'
   has_many :attendances

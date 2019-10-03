@@ -7,7 +7,7 @@
     <% if @owned_events.any? %>
       <% @owned_events.each do |event| %>
         <div class="ownder_event event">
-          <%= render  event %>
+         <img src="<%= url_for(event.cover_image)%>" alt=""> <%= render  event %>
         </div>
       <% end %>
     <% else %>
