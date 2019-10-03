@@ -1,0 +1,19 @@
+<div class="column ">
+  <h1 class="event-title"><%= link_to event.title, event_path(event) %></h1>
+  <!-- <p class="event-description"><%= event.description %></p> -->
+  <p class="event-time"><%= event_time(event) %></p>
+  <p class="event-date"><%= event.event_date%></p>
+  <% if controller.action_name == 'show' && is_logged_in? && !current_user.is_planner?(event)%>
+    <% unless current_user.is_attending?(event) %>
+    <%= form_for(current_user.attendances.build) do |f| %>
+        <%= hidden_field_tag :event_id, event.id %>
+        <%= f.submit 'Attend', class: 'attendance-option-btn attend-btn'%>
+      <% end %>
+      <% else %>
+      <%= form_for(current_user.attendances.find_by(event_id: event.id), html: {method: :delete}) do |f| %>
+      <%= f.submit 'Unattend', class: 'attendance-option-btn unattend-btn'%>
+      <% end %>
+      <% end %>
+  <% end %>
+</div>
+
