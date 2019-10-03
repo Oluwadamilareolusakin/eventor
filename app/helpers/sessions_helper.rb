@@ -34,7 +34,7 @@ module SessionsHelper
   end
 
   def log_in_user
-    return is_logged_in?
+    return logged_in?
     store_url
     redirect_to login_path
   end

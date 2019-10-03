@@ -3,8 +3,8 @@
   <!-- <p class="event-description"><%= event.description %></p> -->
   <p class="event-time"><%= event_time(event) %></p>
   <p class="event-date"><%= event.event_date%></p>
-  <% if controller.action_name == 'show' && is_logged_in? && !current_user.is_planner?(event)%>
-    <% unless current_user.is_attending?(event) %>
+  <% if controller.action_name == 'show' && logged_in? && !current_user.planner?(event)%>
+    <% unless current_user.attending?(event) %>
     <%= form_for(current_user.attendances.build) do |f| %>
         <%= hidden_field_tag :event_id, event.id %>
         <%= f.submit 'Attend', class: 'attendance-option-btn attend-btn'%>

@@ -37,14 +37,15 @@
     width: 50%;
     height: 200px;
 
-    .event-card-image{
-      width: 50%;
-      background-size: contain;
-      background-position: center;
-      background-repeat: no-repeat;
-    }
-
+    
   }
+}
+
+.event-card-image{
+  width: 50%;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .attendance-option-btn{

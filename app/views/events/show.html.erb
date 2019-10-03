@@ -2,7 +2,7 @@
 </div>
 <div class="events-section event-show-body">
   <%= render @event %>
-  <% if is_logged_in? && current_user.is_planner?(@event) %>
+  <% if logged_in? && current_user.planner?(@event) %>
   <div class="attendees">
     <h1>Attendees</h1>
     <% if @attendees.any? %>
