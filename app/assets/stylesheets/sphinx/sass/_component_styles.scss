@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:400,900,900i|Muli|Press+Start+2P&display=swap');
+// @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono|Montserrat:400,900,900i|Muli|Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Be+Vietnam|Nunito|Raleway|Rubik&display=swap');
 
 //Breaking Points
 
@@ -51,9 +52,13 @@ $secondary-black:rgb(24, 24, 24);
 $main-bg-color: teal;
 $primary-grey: rgb(160, 160, 160);
 
-$primary-font: 'Montserrat', sans-serif;
-$secondary-font: 'Muli', sans-serif;
-$aux-font: 'Share Tech Mono', monospace;
+// $primary-font: 'Montserrat', sans-serif;
+$primary-font: 'Be Vietnam', sans-serif;
+
+$secondary-font: 'Rubik', sans-serif;
+// $aux-font: 'Share Tech Mono', monospace;
+$aux-font: 'Nunito', sans-serif;
+
 $medium-paragraph-font-size: 3em;
 $small-paragraph-font-size: 2.4em;
 $large-paragraph-font: 1.8em;
