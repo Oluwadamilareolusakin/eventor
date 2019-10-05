@@ -272,6 +272,11 @@ i.mobile-menu-arrow{
   a{
     margin-right: 2em;
     color: grey;
+    transition: .25s;
+
+    &:hover{
+      color: $main-accent;
+    }
   }
 
   .second-footer-section{
