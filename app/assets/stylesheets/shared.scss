@@ -215,6 +215,7 @@ i.mobile-menu-arrow{
 }
 
 .form-secondary-action-section{
+  margin-top: 1em;
   font-family: $secondary-font;
   
   @media #{$mq-medium}{
@@ -222,6 +223,7 @@ i.mobile-menu-arrow{
     top: 3em;
     right: 6em;
     font-size: .8em;
+    margin-top: 0;
   }
 
   a{
