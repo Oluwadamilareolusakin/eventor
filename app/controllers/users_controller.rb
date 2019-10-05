@@ -38,12 +38,12 @@ class UsersController < ApplicationController
   end
 
   def upcoming
-    @upcoming_events = current_user.attendings.upcoming
+    @upcoming_events = current_user.events.upcoming
     render 'upcoming_events'
   end
 
   def past
-    @past_events = current_user.attendings.past
+    @past_events = current_user.events.past
     render 'past_events'
   end
 
