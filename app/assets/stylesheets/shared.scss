@@ -38,6 +38,11 @@ div.drop-down-menu{
 
     a{
       margin: 0;
+
+      transition: .25s;
+      &:hover{
+        color: $main-accent;
+      }
     }
   }
   
