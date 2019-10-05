@@ -6,17 +6,15 @@
     <% if @upcoming_events.any? %>
       <% @upcoming_events.each do |event| %>
         <div class="upcoming-event event">
-          <% unless current_user.planner?(event) %>
           <div class=" event row">
-              <div style="background-image: url(<%= url_for(event.cover_image)%>)" class="event-card-image"> 
+            <div style="background-image: url(<%= url_for(event.cover_image)%>)" class="event-card-image"> 
 
-                </div>
-                  
-                <div class="event-card-right column">
-                 <%= render  "event_card", event: event %>
-                </div>
+            </div>
+              
+            <div class="event-card-right column">
+              <%= render  "event_card", event: event %>
+            </div>
           </div>
-          <% end %>
         </div>
       <% end %>
     <% else %>
