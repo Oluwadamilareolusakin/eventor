@@ -5,8 +5,7 @@
     <h1 class="section-header">Upcoming Events</h1>
     <% if @upcoming_events.any? %>
       <% @upcoming_events.each do |event| %>
-        <div class="upcoming-event event">
-          <div class=" event row">
+        <div class="upcoming-event event row">
             <div style="background-image: url(<%= url_for(event.cover_image)%>)" class="event-card-image"> 
 
             </div>
@@ -14,7 +13,6 @@
             <div class="event-card-right column">
               <%= render  "event_card", event: event %>
             </div>
-          </div>
         </div>
       <% end %>
     <% else %>
