@@ -13,10 +13,9 @@
           <%= hidden_field_tag :event_id, event.id %>
           <%= f.submit 'Attend', class: 'attendance-option-btn attend-btn'%>
         <% end %>
-        <% else %>
-          <%= form_for(current_user.attendances.find_by(event_id: event.id), html: {method: :delete}) do |f| %>
-            <%= f.submit 'Unattend', class: 'attendance-option-btn unattend-btn'%>
-          <% end %>
+      <% else %>
+        <%= form_for(current_user.attendances.find_by(event_id: event.id), html: {method: :delete}) do |f| %>
+          <%= f.submit 'Unattend', class: 'attendance-option-btn unattend-btn'%>
         <% end %>
       <% end %>
     <% end %>

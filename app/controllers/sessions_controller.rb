@@ -28,9 +28,8 @@ class SessionsController < ApplicationController
     else
       @user = User.find_by(email: params[:session][:email].downcase)
       if @user
-        @user.attempt_to_login
-        @user.send_login_email
-        redirect_to sessions_confirmation_path(@user.name)
+        login(@user)
+        redirect_to @user
       else
         flash[:failure] = 'Please check your email and try again'
         render :new

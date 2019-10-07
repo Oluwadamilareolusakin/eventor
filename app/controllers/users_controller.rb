@@ -3,7 +3,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: %i[show edit update]
   before_action :log_in_user, only: %i[index show upcoming past edit update]
-  before_action :admin?, only: %i[index]
+  # before_action :admin?, only: %i[index]
   before_action :correct_user?, only: %i[edit update show]
   before_action :current_user_exists?, only: %i[new create]
 
@@ -18,10 +18,9 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = 'Please check your email to login'
-      @user.attempt_to_login
-      @user.send_login_email
-      redirect_to signup_confirmation_path(@user.name)
+      flash[:success] = 'You are logged in'
+      login @user
+      redirect_to @user
     else
       render :new
     end
@@ -35,6 +34,8 @@ class UsersController < ApplicationController
 
   def show
     @owned_events = current_user.events if logged_in?
+    @upcoming_events = current_user.events.upcoming
+    @past_events = current_user.events.past
   end
 
   def upcoming
