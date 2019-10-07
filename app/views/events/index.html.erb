@@ -1,6 +1,10 @@
 
 <h1>Upcoming events</h1>
-  <%= render partial: 'users/event_card', locals: {events: @upcoming_events}%>
+<% @upcoming_events.each do |event| %>
+  <%= render partial: 'users/event_card', locals: {event: event}%>
+<% end %>
 
 <h1>Past Events</h1>
-  <%= render partial: 'users/event_card', locals: {events: @past_events}%>
+<% .each do |event| %>
+  <%= render partial: 'users/event_card', locals: {event: event}%>
+<% end %>

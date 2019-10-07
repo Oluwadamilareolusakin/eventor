@@ -1,4 +1,3 @@
-<% events.each do |event| %>
   <div class="column ">
     <h1 class="event-title"><%= link_to event.title, event_path(event) %></h1>
     <p class="event-time"><%= event_time(event) %></p>
@@ -16,5 +15,4 @@
         <% end %>
     <% end %>
   </div>
-<% end %>
 
