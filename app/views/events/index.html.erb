@@ -5,6 +5,6 @@
 <% end %>
 
 <h1>Past Events</h1>
-<% .each do |event| %>
+<% @past_events.each do |event| %>
   <%= render partial: 'users/event_card', locals: {event: event}%>
 <% end %>
