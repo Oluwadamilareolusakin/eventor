@@ -15,10 +15,8 @@ module SessionsHelper
   end
 
   def admin?
-    
     if current_user.nil?
-      log_in_user 
-      return
+      log_in_user && return
     end
     return if current_user.admin
     flash[:failure] = "You don't have permission to access that page"
@@ -39,7 +37,7 @@ module SessionsHelper
   end
 
   def log_in_user
-    return logged_in?
+    return if logged_in?
     store_url
     redirect_to login_path
   end
