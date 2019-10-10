@@ -9,11 +9,7 @@
   </head>
 
   <body>
-    <% unless flash.empty? %>
-      <% flash.each do |type, message| %>
-        <div class="alert alert-<%="#{type}" %>"><%= message %></div>
-      <% end %>
-    <% end %>
+    <%= render  "layouts/flash" %>
     <%= render  'layouts/nav' %>
     <%= yield %>
     <%= render  "layouts/footer" %>
