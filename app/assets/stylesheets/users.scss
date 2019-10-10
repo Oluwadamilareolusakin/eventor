@@ -1,0 +1,39 @@
+@import 'sphinx/sass/component_styles';
+
+
+.header{
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.profile-header{
+  background-image: asset_url('profile.svg');
+}
+
+.upcoming-header{
+  background-image: asset_url('upcoming.svg');
+}
+
+.past-header{
+  background-image: asset_url('past.svg');
+}
+
+.section-header{
+  font-family: $aux-font;
+  font-size: 3em;
+}
+
+.signup-confirmation{
+  background-image: asset_url('signup_confirmation.svg');
+  text-align: center;
+}
+
+.signup-form{
+  background-image: asset_url('signup.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

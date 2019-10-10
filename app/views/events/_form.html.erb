@@ -1,0 +1,41 @@
+  <%= form_for @event do |f| %>
+    <h1><%= yield(:form_title) %></h1>
+    <div class="fields">
+      <%= f.text_field :title, placeholder: 'Event Title' %>
+      <% if @event.errors[:title].any? %>
+        <p class="form-errors">Title <%= @event.errors[:title].first %> </p>
+      <% end %>
+    </div>
+    <div class="fields">
+      <%= f.text_field :location, placeholder: 'Event Location' %>
+      <% if @event.errors[:location].any? %>
+        <p class="form-errors">Location <%= @event.errors[:location].first %> </p>
+      <% end %>
+    </div>
+    <%= f.label :date, "Date", class: 'form-label' %>
+    <div class="fields">
+      <%= f.date_select :date, {start_year: Date.current.year, order: [:day, :month, :year], prompt: {day: 'dd', month: 'mm', year: 'yyyy'}}%>
+      <% if @event.errors[:date].any? %>
+        <p class="form-errors">Date <%= @event.errors[:date].first %> </p>
+      <% end %>
+    </div>
+    <%= f.label :time, "Time", class: 'form-label' %>
+    <div class="fields">
+      <%= f.time_select :time %>
+      <% if @event.errors[:time].any? %>
+        <p class="form-errors">Time <%= @event.errors[:time].first %> </p>
+      <% end %>
+
+      <%= f.file_field :cover_image%>
+    </div>
+    <div class="fields">
+      <%= f.text_area :description, placeholder: 'Description' %>
+      <% if @event.errors[:description].any? %>
+        <p class="form-errors">Description <%= @event.errors[:description].first %> </p>
+      <% end %>
+    </div>
+    
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>

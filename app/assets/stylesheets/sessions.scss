@@ -1,0 +1,15 @@
+// Place all the styles related to the sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.session-confirmation{
+  background-image: asset_url('login_confirmation.svg');
+  text-align: center;
+  
+}
+
+.login-form{
+  background-image: asset_url('login.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}

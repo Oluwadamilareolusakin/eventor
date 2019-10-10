@@ -1,0 +1,5 @@
+Hello <%= @user.name %>, 
+
+Please log in to Eventor with this link: <%= edit_session_url(@user.session_token, email: @user.email) %>
+
+If you didn't try to login, please ignore this mail
