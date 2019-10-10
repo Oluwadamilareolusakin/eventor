@@ -19,6 +19,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = 'Please check your email to login'
+      login @user
       @user.attempt_to_login
       @user.send_login_email
       redirect_to signup_confirmation_path(@user.name)
@@ -38,12 +39,12 @@ class UsersController < ApplicationController
   end
 
   def upcoming
-    @upcoming_events = current_user.events.upcoming
+    @upcoming_events = current_user.attendings.upcoming
     render 'upcoming_events'
   end
 
   def past
-    @past_events = current_user.events.past
+    @past_events = current_user.attendings.past
     render 'past_events'
   end
 
